@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B1E0AF37D7DD0774BB3CCEA /* Pods_RealtimeChatAndTinderClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5F90EB2FE574D47F0ECA85 /* Pods_RealtimeChatAndTinderClone.framework */; };
+		220376952413CC7800AFED19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 220376942413CC7800AFED19 /* GoogleService-Info.plist */; };
 		220F2A8724137C9C0021B9EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220F2A8624137C9C0021B9EC /* AppDelegate.swift */; };
 		220F2A8924137C9C0021B9EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220F2A8824137C9C0021B9EC /* SceneDelegate.swift */; };
 		220F2A8B24137C9C0021B9EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220F2A8A24137C9C0021B9EC /* ViewController.swift */; };
@@ -18,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		220376942413CC7800AFED19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		220F2A8324137C9C0021B9EC /* RealtimeChatAndTinderClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealtimeChatAndTinderClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		220F2A8624137C9C0021B9EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		220F2A8824137C9C0021B9EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +31,9 @@
 		22CD6E9E2413965800F164F8 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		22CD6EA02413B58200F164F8 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		22CD6EA22413BAC600F164F8 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		CE5817308F187CEC428DBE93 /* Pods-RealtimeChatAndTinderClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealtimeChatAndTinderClone.debug.xcconfig"; path = "Target Support Files/Pods-RealtimeChatAndTinderClone/Pods-RealtimeChatAndTinderClone.debug.xcconfig"; sourceTree = "<group>"; };
+		F5FD27552768370052A74DE7 /* Pods-RealtimeChatAndTinderClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealtimeChatAndTinderClone.release.xcconfig"; path = "Target Support Files/Pods-RealtimeChatAndTinderClone/Pods-RealtimeChatAndTinderClone.release.xcconfig"; sourceTree = "<group>"; };
+		FA5F90EB2FE574D47F0ECA85 /* Pods_RealtimeChatAndTinderClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealtimeChatAndTinderClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B1E0AF37D7DD0774BB3CCEA /* Pods_RealtimeChatAndTinderClone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +53,8 @@
 			children = (
 				220F2A8524137C9C0021B9EC /* RealtimeChatAndTinderClone */,
 				220F2A8424137C9C0021B9EC /* Products */,
+				9782C1BD6D4C3F7FF1383632 /* Pods */,
+				6F01132B7236E3B854FCC8B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,8 +78,27 @@
 				22CD6E9E2413965800F164F8 /* SignupViewController.swift */,
 				22CD6EA02413B58200F164F8 /* SignInViewController.swift */,
 				22CD6EA22413BAC600F164F8 /* ForgotPasswordViewController.swift */,
+				220376942413CC7800AFED19 /* GoogleService-Info.plist */,
 			);
 			path = RealtimeChatAndTinderClone;
+			sourceTree = "<group>";
+		};
+		6F01132B7236E3B854FCC8B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA5F90EB2FE574D47F0ECA85 /* Pods_RealtimeChatAndTinderClone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9782C1BD6D4C3F7FF1383632 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE5817308F187CEC428DBE93 /* Pods-RealtimeChatAndTinderClone.debug.xcconfig */,
+				F5FD27552768370052A74DE7 /* Pods-RealtimeChatAndTinderClone.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 220F2A9724137C9E0021B9EC /* Build configuration list for PBXNativeTarget "RealtimeChatAndTinderClone" */;
 			buildPhases = (
+				C39F354BEC2F02D0AFCEE30C /* [CP] Check Pods Manifest.lock */,
 				220F2A7F24137C9C0021B9EC /* Sources */,
 				220F2A8024137C9C0021B9EC /* Frameworks */,
 				220F2A8124137C9C0021B9EC /* Resources */,
+				FA196D90161DF050C99C51FD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,10 +163,53 @@
 			files = (
 				220F2A9324137C9E0021B9EC /* LaunchScreen.storyboard in Resources */,
 				220F2A9024137C9E0021B9EC /* Assets.xcassets in Resources */,
+				220376952413CC7800AFED19 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C39F354BEC2F02D0AFCEE30C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RealtimeChatAndTinderClone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA196D90161DF050C99C51FD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RealtimeChatAndTinderClone/Pods-RealtimeChatAndTinderClone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RealtimeChatAndTinderClone/Pods-RealtimeChatAndTinderClone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RealtimeChatAndTinderClone/Pods-RealtimeChatAndTinderClone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		220F2A7F24137C9C0021B9EC /* Sources */ = {
@@ -282,6 +355,7 @@
 		};
 		220F2A9824137C9E0021B9EC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE5817308F187CEC428DBE93 /* Pods-RealtimeChatAndTinderClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +373,7 @@
 		};
 		220F2A9924137C9E0021B9EC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5FD27552768370052A74DE7 /* Pods-RealtimeChatAndTinderClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
