@@ -51,6 +51,7 @@ class SignInViewController: UIViewController {
         button.setTitleColor(.systemBlue, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.layer.cornerRadius = 8
+        button.addTarget(self, action: #selector(showSignInScreen), for: .touchUpInside)
         
         return button
     }()
@@ -62,6 +63,7 @@ class SignInViewController: UIViewController {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.layer.cornerRadius = 8
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(showForgotScreen), for: .touchUpInside)
         return button
     }()
     
@@ -181,5 +183,13 @@ class SignInViewController: UIViewController {
             forgotPasswordButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
             forgotPasswordButton.heightAnchor.constraint(equalToConstant: 30)
         ])
+    }
+    
+    @objc func showSignInScreen() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func showForgotScreen() {
+        navigationController?.pushViewController(ForgotPasswordViewController(), animated: true)
     }
 }

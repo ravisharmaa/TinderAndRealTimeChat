@@ -57,6 +57,8 @@ class ViewController: UIViewController {
         button.setTitle("Create a new account", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.layer.cornerRadius = 8
+        
+        button.addTarget(self, action: #selector(showSignupView), for: .touchUpInside)
        
         return button
     }()
@@ -164,6 +166,16 @@ class ViewController: UIViewController {
         termsOfUseLabel.numberOfLines = 0
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
     
+    @objc func showSignupView() {
+//        let signupVc = SignupViewController()
+//        signupVc.modalPresentationStyle = .fullScreen
+//        present(signupVc, animated: true, completion: nil)
+        
+        self.navigationController?.pushViewController(SignupViewController(), animated: true)
+    }
 }
 

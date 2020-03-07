@@ -14,7 +14,7 @@ class ForgotPasswordViewController: UIViewController {
         let button = UIButton()
         button.setImage(#imageLiteral(resourceName: "Close"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        
+        button.addTarget(self, action: #selector(showSignInScreen), for: .touchUpInside)
         return button
     }()
     
@@ -86,5 +86,10 @@ class ForgotPasswordViewController: UIViewController {
             stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             stackView.heightAnchor.constraint(equalToConstant: 110)
         ])
+    }
+    
+    @objc func showSignInScreen() {
+        //dismiss can also work here
+        self.navigationController?.popViewController(animated: true)
     }
 }
