@@ -14,6 +14,7 @@
 		220F2A9324137C9E0021B9EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 220F2A9124137C9E0021B9EC /* LaunchScreen.storyboard */; };
 		22CD6E9F2413965800F164F8 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD6E9E2413965800F164F8 /* SignupViewController.swift */; };
 		22CD6EA12413B58200F164F8 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD6EA02413B58200F164F8 /* SignInViewController.swift */; };
+		22CD6EA32413BAC600F164F8 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD6EA22413BAC600F164F8 /* ForgotPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		220F2A9424137C9E0021B9EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22CD6E9E2413965800F164F8 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		22CD6EA02413B58200F164F8 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		22CD6EA22413BAC600F164F8 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				220F2A9424137C9E0021B9EC /* Info.plist */,
 				22CD6E9E2413965800F164F8 /* SignupViewController.swift */,
 				22CD6EA02413B58200F164F8 /* SignInViewController.swift */,
+				22CD6EA22413BAC600F164F8 /* ForgotPasswordViewController.swift */,
 			);
 			path = RealtimeChatAndTinderClone;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			files = (
 				220F2A8B24137C9C0021B9EC /* ViewController.swift in Sources */,
 				220F2A8724137C9C0021B9EC /* AppDelegate.swift in Sources */,
+				22CD6EA32413BAC600F164F8 /* ForgotPasswordViewController.swift in Sources */,
 				22CD6E9F2413965800F164F8 /* SignupViewController.swift in Sources */,
 				22CD6EA12413B58200F164F8 /* SignInViewController.swift in Sources */,
 				220F2A8924137C9C0021B9EC /* SceneDelegate.swift in Sources */,
