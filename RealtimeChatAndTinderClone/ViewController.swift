@@ -13,14 +13,29 @@ class ViewController: UIViewController {
         let button = UIButton()
         
         button.setTitle("Sign In With Facebook", for: .normal)
-        button.backgroundColor = .systemBlue
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        button.setImage(#imageLiteral(resourceName: "Facebook"), for: .normal)
+        button.backgroundColor = UIColor(red: 58/255, green: 85/255, blue: 159/255, alpha: 1.0)
+        button.layer.cornerRadius = 8
+        button.clipsToBounds = true
+        button.imageView?.backgroundColor =  UIColor(red: 58/255, green: 85/255, blue: 159/255, alpha: 1.0)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.tintColor = .white
+        button.imageEdgeInsets = UIEdgeInsets(top: 12, left: -15, bottom: 12, right: 0)
         return button
     }()
     
     lazy var googleButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .systemRed
         button.setTitle("Sign In With Google", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        button.setImage(#imageLiteral(resourceName: "Google"), for: .normal)
+        button.backgroundColor = UIColor(red: 223/255, green: 74/255, blue: 50/255, alpha: 1.0)
+        button.layer.cornerRadius = 8
+        button.clipsToBounds = true
+        button.imageView?.contentMode = .scaleAspectFit
+        button.tintColor = .white
+        button.imageEdgeInsets = UIEdgeInsets(top: 12, left: -35, bottom: 12, right: 0)
         
         return button
     }()
@@ -36,11 +51,13 @@ class ViewController: UIViewController {
         return label
     }()
     
-    lazy var emailButton: UIButton = {
+    lazy var createAccount: UIButton = {
         let button = UIButton()
         button.backgroundColor = .black
-        button.setTitle("Sign In With Email", for: .normal)
-        
+        button.setTitle("Create a new account", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        button.layer.cornerRadius = 8
+       
         return button
     }()
     
@@ -61,7 +78,7 @@ class ViewController: UIViewController {
         
         setupTitleLabel()
         
-        setupOrAndTermsLabel()
+        setupTermsLabel()
         
         NSLayoutConstraint.activate([
             
@@ -82,12 +99,12 @@ class ViewController: UIViewController {
             
             orLabel.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor, constant: 0),
             orLabel.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor, constant: 0),
-            orLabel.bottomAnchor.constraint(equalTo: emailButton.topAnchor, constant: -25),
+            orLabel.bottomAnchor.constraint(equalTo: createAccount.topAnchor, constant: -25),
             
-            emailButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            emailButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            emailButton.heightAnchor.constraint(equalToConstant: 50),
-            emailButton.bottomAnchor.constraint(equalTo: termsOfUseLabel.topAnchor, constant: -25),
+            createAccount.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            createAccount.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            createAccount.heightAnchor.constraint(equalToConstant: 50),
+            createAccount.bottomAnchor.constraint(equalTo: termsOfUseLabel.topAnchor, constant: -25),
             
             termsOfUseLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             termsOfUseLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
@@ -124,13 +141,13 @@ class ViewController: UIViewController {
         
         createAccountLabel.attributedText = attributedText
         
-        [createAccountLabel, facebookButton, googleButton, orLabel, emailButton, termsOfUseLabel].forEach { (customViews) in
+        [createAccountLabel, facebookButton, googleButton, orLabel, createAccount, termsOfUseLabel].forEach { (customViews) in
             view.addSubview(customViews)
             customViews.translatesAutoresizingMaskIntoConstraints = false
         }
     }
     
-    func setupOrAndTermsLabel() {
+    func setupTermsLabel() {
         let attributedTermText = NSMutableAttributedString(string: "By Clicking the terms of service you agree to ", attributes: [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14),
             NSAttributedString.Key.foregroundColor : UIColor(white: 0, alpha: 0.65),
