@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		220F2A8B24137C9C0021B9EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220F2A8A24137C9C0021B9EC /* ViewController.swift */; };
 		220F2A9024137C9E0021B9EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 220F2A8F24137C9E0021B9EC /* Assets.xcassets */; };
 		220F2A9324137C9E0021B9EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 220F2A9124137C9E0021B9EC /* LaunchScreen.storyboard */; };
+		2222C8782413E197000BB764 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2222C8772413E197000BB764 /* Authentication.swift */; };
 		22CD6E9F2413965800F164F8 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD6E9E2413965800F164F8 /* SignupViewController.swift */; };
 		22CD6EA12413B58200F164F8 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD6EA02413B58200F164F8 /* SignInViewController.swift */; };
 		22CD6EA32413BAC600F164F8 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD6EA22413BAC600F164F8 /* ForgotPasswordViewController.swift */; };
@@ -28,6 +29,7 @@
 		220F2A8F24137C9E0021B9EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		220F2A9224137C9E0021B9EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		220F2A9424137C9E0021B9EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2222C8772413E197000BB764 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		22CD6E9E2413965800F164F8 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		22CD6EA02413B58200F164F8 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		22CD6EA22413BAC600F164F8 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		220F2A8524137C9C0021B9EC /* RealtimeChatAndTinderClone */ = {
 			isa = PBXGroup;
 			children = (
+				2222C8762413E175000BB764 /* Services */,
 				220F2A8624137C9C0021B9EC /* AppDelegate.swift */,
 				220F2A8824137C9C0021B9EC /* SceneDelegate.swift */,
 				220F2A8A24137C9C0021B9EC /* ViewController.swift */,
@@ -81,6 +84,14 @@
 				220376942413CC7800AFED19 /* GoogleService-Info.plist */,
 			);
 			path = RealtimeChatAndTinderClone;
+			sourceTree = "<group>";
+		};
+		2222C8762413E175000BB764 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2222C8772413E197000BB764 /* Authentication.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		6F01132B7236E3B854FCC8B8 /* Frameworks */ = {
@@ -97,7 +108,6 @@
 				CE5817308F187CEC428DBE93 /* Pods-RealtimeChatAndTinderClone.debug.xcconfig */,
 				F5FD27552768370052A74DE7 /* Pods-RealtimeChatAndTinderClone.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -216,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2222C8782413E197000BB764 /* Authentication.swift in Sources */,
 				220F2A8B24137C9C0021B9EC /* ViewController.swift in Sources */,
 				220F2A8724137C9C0021B9EC /* AppDelegate.swift in Sources */,
 				22CD6EA32413BAC600F164F8 /* ForgotPasswordViewController.swift in Sources */,

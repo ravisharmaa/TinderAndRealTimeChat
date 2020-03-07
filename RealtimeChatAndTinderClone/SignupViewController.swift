@@ -55,20 +55,21 @@ class SignupViewController: UIViewController {
         return textField
     }()
     
-    lazy var signInButton: UIButton = {
+    lazy var signUpButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .black
         button.setTitle("Sign Up", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        button.addTarget(self, action: #selector(signUpPressed), for: .touchUpInside)
         button.layer.cornerRadius = 8
         
         
         return button
     }()
     
-    lazy var signUpButton: UIButton = {
+    lazy var signInButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Sign Up", for: .normal)
+        //button.setTitle("Sign Up", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.layer.cornerRadius = 8
@@ -155,14 +156,14 @@ class SignupViewController: UIViewController {
             emailTextField.widthAnchor.constraint(equalToConstant: view.frame.width - 80),
             passwordTextField.heightAnchor.constraint(equalToConstant: 50),
             passwordTextField.widthAnchor.constraint(equalToConstant: view.frame.width - 80),
-            signInButton.widthAnchor.constraint(equalToConstant: view.frame.width - 80),
-            signInButton.heightAnchor.constraint(equalToConstant: 50)
+            signUpButton.widthAnchor.constraint(equalToConstant: view.frame.width - 80),
+            signUpButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         
         // stack view initialization
         
         let stackView = UIStackView(arrangedSubviews: [
-            nameTextField, emailTextField, passwordTextField, signInButton, signUpButton
+            nameTextField, emailTextField, passwordTextField, signUpButton, signInButton
         ])
         
         view.addSubview(stackView)
@@ -199,7 +200,7 @@ class SignupViewController: UIViewController {
         
         attributedTermText.append(attributedTermBoldText)
         
-        signUpButton.setAttributedTitle(attributedTermText, for: .normal)
+        signInButton.setAttributedTitle(attributedTermText, for: .normal)
     }
     
     @objc func goBack() {
@@ -209,5 +210,17 @@ class SignupViewController: UIViewController {
     
     @objc func showSignInScreen() {
         navigationController?.pushViewController(SignInViewController(), animated: true)
+    }
+    
+    @objc func signUpPressed() {
+        Authentication.register(email: "test@gmail.com", password: "test123456") { (result) in
+            
+            switch result {
+            case .success(let data):
+                print(data)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
