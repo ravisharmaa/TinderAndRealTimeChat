@@ -28,7 +28,11 @@ class ViewController: UIViewController {
     lazy var orLabel: UILabel = {
         let label = UILabel()
         label.text = "Or"
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.textColor = UIColor(white: 0, alpha: 0.45)
         label.textAlignment = .center
+        
+        
         return label
     }()
     
@@ -42,7 +46,6 @@ class ViewController: UIViewController {
     
     lazy var termsOfUseLabel: UILabel = {
         let label = UILabel()
-        label.text = "Terms Of Use"
         label.textAlignment = .center
         return label
     }()
@@ -55,10 +58,47 @@ class ViewController: UIViewController {
     }
     
     func setupUI() {
+        
+        setupTitleLabel()
+        
+        setupOrAndTermsLabel()
+        
+        NSLayoutConstraint.activate([
+            
+            createAccountLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            createAccountLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            createAccountLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            
+            facebookButton.topAnchor.constraint(equalTo: createAccountLabel.bottomAnchor, constant: 40),
+            facebookButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            facebookButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            facebookButton.bottomAnchor.constraint(equalTo: googleButton.topAnchor, constant: -25),
+            facebookButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            googleButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            googleButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            googleButton.bottomAnchor.constraint(equalTo: orLabel.topAnchor, constant: -25),
+            googleButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            orLabel.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor, constant: 0),
+            orLabel.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor, constant: 0),
+            orLabel.bottomAnchor.constraint(equalTo: emailButton.topAnchor, constant: -25),
+            
+            emailButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            emailButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            emailButton.heightAnchor.constraint(equalToConstant: 50),
+            emailButton.bottomAnchor.constraint(equalTo: termsOfUseLabel.topAnchor, constant: -25),
+            
+            termsOfUseLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            termsOfUseLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+        ])
+    }
+    
+    func setupTitleLabel() {
         let title = "Create a new account"
         let subtitle = "\n\n This is the subtitle which was meant to be a subtitle and ended up being a subtitle which to much more to be a subtitle."
         
-        //NSAttributed String
+        
         
         let attributedText = NSMutableAttributedString(string:  title, attributes: [
             NSAttributedString.Key.font: UIFont.init(name: "Didot", size: 28)!,
@@ -84,57 +124,27 @@ class ViewController: UIViewController {
         
         createAccountLabel.attributedText = attributedText
         
-        view.addSubview(createAccountLabel)
-        
-        createAccountLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            createAccountLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
-            createAccountLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            createAccountLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
-        ])
-        
-        view.addSubview(facebookButton)
-        
-        view.addSubview(googleButton)
-        
-        view.addSubview(orLabel)
-        
-        view.addSubview(emailButton)
-        
-        view.addSubview(termsOfUseLabel)
-        
-        [facebookButton, googleButton, orLabel, emailButton, termsOfUseLabel].forEach { (customViews) in
+        [createAccountLabel, facebookButton, googleButton, orLabel, emailButton, termsOfUseLabel].forEach { (customViews) in
             view.addSubview(customViews)
             customViews.translatesAutoresizingMaskIntoConstraints = false
         }
-        
-        NSLayoutConstraint.activate([
-            facebookButton.topAnchor.constraint(equalTo: createAccountLabel.bottomAnchor, constant: 40),
-            facebookButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            facebookButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            facebookButton.bottomAnchor.constraint(equalTo: googleButton.topAnchor, constant: -25),
-            facebookButton.heightAnchor.constraint(equalToConstant: 50),
-            
-            googleButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            googleButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            googleButton.bottomAnchor.constraint(equalTo: orLabel.topAnchor, constant: -25),
-            googleButton.heightAnchor.constraint(equalToConstant: 50),
-            
-            orLabel.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor, constant: 0),
-            orLabel.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor, constant: 0),
-            orLabel.bottomAnchor.constraint(equalTo: emailButton.topAnchor, constant: -25),
-            
-            emailButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            emailButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            emailButton.heightAnchor.constraint(equalToConstant: 50),
-            emailButton.bottomAnchor.constraint(equalTo: termsOfUseLabel.topAnchor, constant: -25),
-            
-            termsOfUseLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            termsOfUseLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            
-            
+    }
+    
+    func setupOrAndTermsLabel() {
+        let attributedTermText = NSMutableAttributedString(string: "By Clicking the terms of service you agree to ", attributes: [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14),
+            NSAttributedString.Key.foregroundColor : UIColor(white: 0, alpha: 0.65),
         ])
+        
+        let attributedTermBoldText = NSMutableAttributedString(string: "Terms Of Service", attributes: [
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14),
+            NSAttributedString.Key.foregroundColor : UIColor(white: 0, alpha: 0.65),
+        ])
+        
+        attributedTermText.append(attributedTermBoldText)
+        
+        termsOfUseLabel.attributedText = attributedTermText
+        termsOfUseLabel.numberOfLines = 0
     }
     
     
