@@ -32,7 +32,7 @@ extension FireBaseDBManager {
                 if error != nil {
                     print(error ?? "hello world")
                 }
-                // need to refactor or may be caputre this to do something when the 
+                // need to refactor or may be caputre this to do something when the
         }
         return true
     }

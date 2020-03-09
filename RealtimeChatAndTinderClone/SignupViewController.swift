@@ -22,7 +22,9 @@ class SignupViewController: UIViewController {
     lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .red
+        imageView.isUserInteractionEnabled = true
+        imageView.backgroundColor = .systemGray
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(upload)))
         return imageView
         
     }()
@@ -231,5 +233,31 @@ class SignupViewController: UIViewController {
                 print(error)
             }
         }
+    }
+    
+    @objc func upload() {
+        //adding image picker
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true, completion: nil)
+    }
+}
+
+
+extension SignupViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+       
+        if let imageSelected = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            profileImageView.image = imageSelected
+        }
+        
+        if let previousImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            profileImageView.image = previousImage
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
     }
 }
