@@ -19,6 +19,7 @@
 		22CD6E9F2413965800F164F8 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD6E9E2413965800F164F8 /* SignupViewController.swift */; };
 		22CD6EA12413B58200F164F8 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD6EA02413B58200F164F8 /* SignInViewController.swift */; };
 		22CD6EA32413BAC600F164F8 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD6EA22413BAC600F164F8 /* ForgotPasswordViewController.swift */; };
+		22DA370A2416663F004AAE47 /* FireBaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DA37092416663F004AAE47 /* FireBaseStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		22CD6E9E2413965800F164F8 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		22CD6EA02413B58200F164F8 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		22CD6EA22413BAC600F164F8 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		22DA37092416663F004AAE47 /* FireBaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseStorage.swift; sourceTree = "<group>"; };
 		CE5817308F187CEC428DBE93 /* Pods-RealtimeChatAndTinderClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealtimeChatAndTinderClone.debug.xcconfig"; path = "Target Support Files/Pods-RealtimeChatAndTinderClone/Pods-RealtimeChatAndTinderClone.debug.xcconfig"; sourceTree = "<group>"; };
 		F5FD27552768370052A74DE7 /* Pods-RealtimeChatAndTinderClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealtimeChatAndTinderClone.release.xcconfig"; path = "Target Support Files/Pods-RealtimeChatAndTinderClone/Pods-RealtimeChatAndTinderClone.release.xcconfig"; sourceTree = "<group>"; };
 		FA5F90EB2FE574D47F0ECA85 /* Pods_RealtimeChatAndTinderClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealtimeChatAndTinderClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +95,7 @@
 			children = (
 				2222C8772413E197000BB764 /* Authentication.swift */,
 				2222C8792413E83C000BB764 /* FireBaseDBManager.swift */,
+				22DA37092416663F004AAE47 /* FireBaseStorage.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			files = (
 				2222C8782413E197000BB764 /* Authentication.swift in Sources */,
 				220F2A8B24137C9C0021B9EC /* ViewController.swift in Sources */,
+				22DA370A2416663F004AAE47 /* FireBaseStorage.swift in Sources */,
 				220F2A8724137C9C0021B9EC /* AppDelegate.swift in Sources */,
 				2222C87A2413E83C000BB764 /* FireBaseDBManager.swift in Sources */,
 				22CD6EA32413BAC600F164F8 /* ForgotPasswordViewController.swift in Sources */,

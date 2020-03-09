@@ -1,8 +1,9 @@
 import UIKit
+import FirebaseStorage
 
 class SignupViewController: UIViewController {
     
-    //MARK:- Properties
+    //MARK:- UI-Properties
     
     lazy var closeButton: UIButton = {
         let button = UIButton()
@@ -79,6 +80,11 @@ class SignupViewController: UIViewController {
         return button
     }()
     
+    //MARK:- Class Properties
+    
+    var uploadedImage: UIImage?
+    
+    var uploadedImageURL: String?
     
     //MARK:- Lifecycle
     
@@ -215,16 +221,25 @@ class SignupViewController: UIViewController {
     }
     
     @objc func signUpPressed() {
-        Authentication.shared.register(email: "testss@gmail.com", password: "test123456") { (result) in
+        
+        guard let uploadableImage = uploadedImage else { return }
+        
+        guard let finaImage = uploadableImage.jpegData(compressionQuality: 0.4) else { return }
+        
+        
+        Authentication.shared.register(email: "testss@gmail.com", password: "test123456") { [weak self ](result) in
             
             switch result {
             case .success(let data):
                 if let response = data {
+                    FireBaseStorage.shared.store(data: finaImage, contentType: "image/jpg", forUser: response.user.uid) { [weak self] (url) in
+                        self?.uploadedImageURL = url
+                    }
                     
                     FireBaseDBManager.shared.save(dataDict: [
                         "uid": response.user.uid,
                         "email":  response.user.email,
-                        "profile_image": "",
+                        "profile_image": self?.uploadedImageURL,
                         "status":""
                     ], withNode: Nodes.User.rawValue)
                 }
@@ -249,12 +264,18 @@ class SignupViewController: UIViewController {
 extension SignupViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-       
+        
         if let imageSelected = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            
+            //set the uploaded image as a local prperty
+            self.uploadedImage = imageSelected
             profileImageView.image = imageSelected
         }
         
         if let previousImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            
+            //set the uploaded image as a local prperty
+            self.uploadedImage = previousImage
             profileImageView.image = previousImage
         }
         
