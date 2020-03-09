@@ -20,7 +20,7 @@ struct Authentication {
 
 extension Authentication {
     
-    static func register(email: String, password: String, completion: @escaping((Result<AuthDataResult?, Error>) -> Void )) {
+     func register(email: String, password: String, completion: @escaping((Result<AuthDataResult?, Error>) -> Void )) {
         
         Auth.auth().createUser(withEmail: email, password: password) { (response, error) in
             
@@ -28,7 +28,9 @@ extension Authentication {
                 completion(.failure(error!))
             }
             
-            completion(.success(response))
+            guard let serverResponse = response else { return }
+            
+            completion(.success(serverResponse))
             
             
         }

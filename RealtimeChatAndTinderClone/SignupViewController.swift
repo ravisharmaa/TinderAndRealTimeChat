@@ -149,9 +149,9 @@ class SignupViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             
-           nameTextField.heightAnchor.constraint(equalToConstant: 50),
-           nameTextField.widthAnchor.constraint(equalToConstant: view.frame.width - 80),
-           
+            nameTextField.heightAnchor.constraint(equalToConstant: 50),
+            nameTextField.widthAnchor.constraint(equalToConstant: view.frame.width - 80),
+            
             emailTextField.heightAnchor.constraint(equalToConstant: 50),
             emailTextField.widthAnchor.constraint(equalToConstant: view.frame.width - 80),
             passwordTextField.heightAnchor.constraint(equalToConstant: 50),
@@ -213,11 +213,20 @@ class SignupViewController: UIViewController {
     }
     
     @objc func signUpPressed() {
-        Authentication.register(email: "test@gmail.com", password: "test123456") { (result) in
+        Authentication.shared.register(email: "testss@gmail.com", password: "test123456") { (result) in
             
             switch result {
             case .success(let data):
-                print(data)
+                if let response = data {
+                    
+                    FireBaseDBManager.shared.save(dataDict: [
+                        "uid": response.user.uid,
+                        "email":  response.user.email,
+                        "profile_image": "",
+                        "status":""
+                    ], withNode: Nodes.User.rawValue)
+                }
+                
             case .failure(let error):
                 print(error)
             }
