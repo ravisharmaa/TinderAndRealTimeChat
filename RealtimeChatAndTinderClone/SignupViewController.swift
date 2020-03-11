@@ -226,15 +226,22 @@ class SignupViewController: UIViewController {
         
         guard let finaImage = uploadableImage.jpegData(compressionQuality: 0.4) else { return }
         
+        // register the user in firebase
         
         Authentication.shared.register(email: "testss@gmail.com", password: "test123456") { [weak self ](result) in
             
             switch result {
             case .success(let data):
                 if let response = data {
+                    
+                    // uploads profile image into firebase storage
+                    
                     FireBaseStorage.shared.store(data: finaImage, contentType: "image/jpg", forUser: response.user.uid) { [weak self] (url) in
                         self?.uploadedImageURL = url
                     }
+                    
+                    // saves the user's information into the firebase database after retreiving the URL of profile image uploaded
+                    // previously.
                     
                     FireBaseDBManager.shared.save(dataDict: [
                         "uid": response.user.uid,

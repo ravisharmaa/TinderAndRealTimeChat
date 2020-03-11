@@ -28,7 +28,6 @@ struct FireBaseStorage {
         storageProfile.putData(data, metadata: metaData) { (metaData, error) in
             if error != nil {
                 print("error while uploading", String(describing: error?.localizedDescription))
-                completion(nil)
                 return
             }
             
